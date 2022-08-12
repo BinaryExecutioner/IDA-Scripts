@@ -27,7 +27,7 @@ def encrypted_func(func):
         o = idc.print_insn_mnem(third_instruction)
         fourth_instruction = idc.next_head(third_instruction)
         fifth_instruction = idc.next_head(fourth_instruction)
-        if (m == "push" and n == "push" and o == "push" and idc.get_operand_value(address,0) == 1 and idc.get_operand_type(next_instruction,0) == 5 and idc.get_operand_type(third_instruction,0) == 5 ):
+        if (m and n and o == "push" and idc.get_operand_value(address,0) == 1 and idc.get_operand_type(next_instruction,0) == 5 and idc.get_operand_type(third_instruction,0) == 5 ):
             x = idc.get_operand_value(fifth_instruction,1)
             length = idc.get_operand_value(third_instruction,0)
             k = idc.get_operand_value(next_instruction,0)
